@@ -1,16 +1,16 @@
 FROM node:12.13-alpine As development
 # Create app directory
-RUN mkdir -p /var/www/ticktacbackend
+RUN mkdir -p /var/www/awesomebackend
 
 # Install app dependencies
-COPY package.json /var/www/ticktacbackend/package.json
+COPY package.json /var/www/awesomebackend/package.json
 
 RUN npm install 
 
 # Bundle app source
-COPY . /var/www/ticktacbackend
+COPY . /var/www/awesomebackend
 
-WORKDIR /var/www/ticktacbackend
+WORKDIR /var/www/awesomebackend
 
 
 ARG NODE_ENV=development

@@ -1,42 +1,42 @@
 version: "3.5"
 services:
   backend:
-    container_name: backend_app
-    working_dir: /var/www/ticktacbackend
+    container_name: awesome_app
+    working_dir: /var/www/awesomebackend
     build:
       context: .
     volumes:
-      - .:/var/www/ticktacbackend
-      - /var/www/ticktacbackend/node_modules
+      - .:/var/www/awesomebackend
+      - /var/www/awesomebackend/node_modules
     ports:
-      - 2108:3001
+      - 1108:3001
     networks:
-      - ticktacnet
+      - awesomenet
     depends_on:
       - db
 
   db:
     image: postgres:11.5-alpine
-    container_name: backend_postgres
+    container_name: awesome_postgres
     networks:
-      - ticktacnet
+      - awesomenet
     volumes:
-      - /home/shohag/Workspace/Deploy/db_store/ticktacdb:/var/lib/postgresql/data
+      - /home/shohag/Workspace/Deploy/db_store/awesome:/var/lib/postgresql/data
     environment:
-      - POSTGRES_USER=ticktac
-      - POSTGRES_PASSWORD=ticktac
-      - POSTGRES_DB=ticktac
+      - POSTGRES_USER=awesome
+      - POSTGRES_PASSWORD=awesome
+      - POSTGRES_DB=awesome
 
   db_client:
     image: adminer
-    container_name: backend_app_adminer
+    container_name: awesome_app_adminer
     ports:
-      - 2109:8080
+      - 1109:8080
     depends_on:
       - db
     networks:
-      - ticktacnet
+      - awesomenet
 
 networks:
-  ticktacnet:
+  awesomenet:
     driver: bridge
