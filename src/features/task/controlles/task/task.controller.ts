@@ -5,7 +5,7 @@ import { AwesomeController } from '../../../../core/base/controller/AwesomeContr
 @Controller('task')
 export class TaskController extends AwesomeController{
       constructor(
-            private task_service: TaskService
+            private taskService: TaskService
       ) {
             super()
       }

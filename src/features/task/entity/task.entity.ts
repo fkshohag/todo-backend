@@ -15,5 +15,5 @@ export class TaskEntity {
       description: string
 
       @Column()
-      assign: number
+      assign: string
 }

@@ -15,10 +15,10 @@ export class TaskService {
             return await this.actionRepository.find();
       }
 
-      async createNewAction(o:TaskDTO): Promise<TaskEntity> {
-            const a = this.actionRepository.create(o)
-            await this.actionRepository.save(o)
-            return a
+      async createNewAction(task:TaskDTO): Promise<TaskEntity> {
+            const newTask  = this.actionRepository.create(task)
+            await this.actionRepository.save(newTask)
+            return newTask
       }
 
       async clear() {
