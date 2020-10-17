@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule, TypeOrmModuleOptions } from "@nestjs/typeorm"
-import { TicktacktoeModule } from './features/ticktacktoe/ticktacktoe.module';
+import { AwesomeModule } from './features/task/task.module';
 import { getDefaultDatabaseOption } from './configs/database.config';
 import { ConfigModule } from '@nestjs/config';
 
@@ -9,7 +9,7 @@ import { ConfigModule } from '@nestjs/config';
   imports: [
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot(getDefaultDatabaseOption() as TypeOrmModuleOptions),
-    TicktacktoeModule
+    AwesomeModule
   ]
 })
 export class AppModule {}

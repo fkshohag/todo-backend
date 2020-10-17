@@ -1,5 +1,5 @@
 import { equals } from 'class-validator'
-import { ActionEntity } from '../features/ticktacktoe/entity/action.entity';
+import { TaskEntity } from '../features/task/entity/task.entity';
 
 function parseBoolean(bool: string) {
     if (equals('true', bool)) {
@@ -9,7 +9,7 @@ function parseBoolean(bool: string) {
 }
 
 const entities = [
-    ActionEntity
+    TaskEntity
 ]
 
 

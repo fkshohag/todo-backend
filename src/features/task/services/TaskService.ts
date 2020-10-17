@@ -1,19 +1,21 @@
 import { InjectRepository } from "@nestjs/typeorm";
-import { ActionEntity } from '../entity/action.entity';
+import { TaskDTO } from "src/features/task/dto/task.dto";
 import { Repository } from 'typeorm';
-import { NewActionDTO } from '../dto/newaction.dto';
+import { TaskEntity } from '../entity/task.entity';
 
-export class ActionService {
+export class TaskService {      
       constructor(
-            @InjectRepository(ActionEntity)
-            public actionRepository: Repository<ActionEntity>,
-      ) {}
+            @InjectRepository(TaskEntity)
+            public actionRepository: Repository<TaskEntity>,
+      ) {
+            
+      }
       
-      async findAll(): Promise<ActionEntity[]> {
+      async findAll(): Promise<TaskEntity[]> {
             return await this.actionRepository.find();
       }
 
-      async createNewAction(o:NewActionDTO): Promise<ActionEntity> {
+      async createNewAction(o:TaskDTO): Promise<TaskEntity> {
             const a = this.actionRepository.create(o)
             await this.actionRepository.save(o)
             return a

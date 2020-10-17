@@ -1,19 +1,19 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
 @Entity()
-export class ActionEntity {
+export class TaskEntity {
       @PrimaryGeneratedColumn()
       id: number
 
       @Column()
-      step: number
+      title: string
 
       @Column()
-      currentPlayer: number
+      status: number
 
       @Column()
-      nextPlayer: number
+      description: string
 
       @Column()
-      pressValue: number
+      assign: number
 }
