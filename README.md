@@ -8,9 +8,9 @@ $ docker-compose up --build
 
 ```bash
 # API SERVER
-$ 127.0.0.1:2108
+$ 127.0.0.1:1108
 
 # Database admin panel
-$ 127.0.0.1:2109
+$ 127.0.0.1:1109
 $ username: awesome
 $ password: awesome
